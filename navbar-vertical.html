@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar Vertical Tailwind</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 h-screen bg-white shadow-md flex flex-col justify-between fixed">
+    <!-- Top: Logo y Menú -->
+    <div>
+      <!-- Logo -->
+      <div class="p-6 text-2xl font-bold text-orange-600 border-b">
+        <a href="#">MiLogo</a>
+      </div>
+
+      <!-- Menús -->
+      <nav class="flex flex-col px-6 py-4 space-y-4 text-gray-700 font-medium">
+        <a href="#" class="hover:text-orange-600">Inicio</a>
+        <a href="#" class="hover:text-orange-600">Servicios</a>
+        <a href="#" class="hover:text-orange-600">Proyectos</a>
+        <a href="#" class="hover:text-orange-600">Contacto</a>
+      </nav>
+    </div>
+
+    <!-- Bottom: Configuración -->
+    <div class="relative px-6 py-4 border-t">
+      <button id="settingsBtn" class="text-gray-600 hover:text-orange-600 focus:outline-none w-full text-left">
+        ⚙️ Configuración
+      </button>
+
+      <!-- Panel de Configuración -->
+      <div id="settingsPanel" class="hidden absolute left-64 bottom-4 w-48 bg-white shadow-lg rounded-md border border-gray-200 z-50">
+        <ul class="py-2 text-sm text-gray-700">
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Perfil</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Ajustes</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="ml-64 p-6 flex-1">
+    <h1 class="text-3xl font-semibold text-gray-800">Bienvenido</h1>
+    <p class="mt-4 text-gray-600">Aquí va el contenido principal de tu aplicación.</p>
+  </main>
+
+  <script>
+    const btn = document.getElementById('settingsBtn');
+    const panel = document.getElementById('settingsPanel');
+
+    btn.addEventListener('click', () => {
+      panel.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!btn.contains(e.target) && !panel.contains(e.target)) {
+        panel.classList.add('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>

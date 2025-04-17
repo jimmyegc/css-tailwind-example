@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracking con Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        /* Fondo dinámico con gradiente */
+        .mouse-gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 165, 0, 0.2), transparent 50%);
+            pointer-events: none;
+            transition: background 0.2s ease-out;
+        }
+    </style>
+</head>
+
+
+<body class="relative h-screen bg-[#0f172a] flex items-center justify-center text-white overflow-hidden">
+
+    <!-- Gradiente que sigue el mouse -->
+    <div id="mouseEffect" class="mouse-gradient"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 text-center">
+        <h1 class="text-4xl font-bold text-[#172aff]">Mouse Tracking Effect</h1>
+        <p class="mt-2 text-lg text-[#2aff0f]">Mueve el mouse sobre la pantalla</p>
+    </div>
+
+    
+    <style>
+        .libutton {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 7px;
+          text-align: center;
+          outline: none;
+          text-decoration: none !important;
+          color: #ffffff !important;
+          width: 200px;
+          height: 32px;
+          border-radius: 16px;
+          background-color: #0A66C2;
+          font-family: "SF Pro Text", Helvetica, sans-serif;
+        }
+      </style>
+<a class="libutton" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=jimmyegc" target="_blank">Follow on LinkedIn</a>
+
+    <div class="badge-base LI-profile-badge" data-locale="es_ES" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="jimmyegc" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://mx.linkedin.com/in/jimmyegc?trk=profile-badge">Jimmy García</a></div>
+              
+
+    🔥 Explicación de la implementación
+✅ Colores aplicados en Tailwind:
+
+bg-[#0f172a] → Fondo oscuro.
+
+text-[#172aff] → Azul vibrante en el título.
+
+text-[#2aff0f] → Verde neón en el texto.
+
+✅ Gradiente dinámico:
+
+El gradiente cambia la posición en var(--x, 50%) var(--y, 50%).
+
+rgba(255, 165, 0, 0.2) crea un brillo naranja sutil.
+
+✅ Efecto de seguimiento del mouse:
+
+JavaScript actualiza --x y --y en mousemove.
+
+transition: background 0.2s ease-out; suaviza el efecto.
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            document.getElementById("mouseEffect").style.setProperty('--x', `${x}px`);
+            document.getElementById("mouseEffect").style.setProperty('--y', `${y}px`);
+        });
+    </script>
+
+</body>
+</html>

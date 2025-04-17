@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      .mouse-cursor-gradient-tracking {
+        position: relative;
+        background: #7983ff;
+        overflow: hidden;
+      }
+
+      .mouse-cursor-gradient-tracking span {
+        position: relative;
+        pointer-events: none;
+      }
+
+      .mouse-cursor-gradient-tracking::before {
+        --size: 0;
+        content: '';
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: var(--size);
+        height: var(--size);
+        background: radial-gradient(circle closest-side, pink, transparent);
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease;
+      }
+
+      .mouse-cursor-gradient-tracking:hover::before {
+        --size: 200px;
+      }
+    </style>
+  </head>
+  <body class="mouse-cursor-gradient-tracking bg-tracking">
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+    <script>
+      const btn = document.querySelector('.bg-tracking');
+
+      btn.addEventListener('mousemove', e => {
+        const rect = e.target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        btn.style.setProperty('--x', x + 'px');
+        btn.style.setProperty('--y', y + 'px');
+      });
+    </script>
+  </body>
+</html>

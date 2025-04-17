@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100">
+    <nav class="bg-white shadow-md px-6 py-3 flex items-center justify-between relative">
+      <!-- Logo -->
+      <div class="text-xl font-bold text-orange-600">
+        <a href="#">MiLogo</a>
+      </div>
+  
+      <!-- Menús principales -->
+      <ul class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <li><a href="#" class="hover:text-orange-600">Inicio</a></li>
+        <li><a href="#" class="hover:text-orange-600">Servicios</a></li>
+        <li><a href="#" class="hover:text-orange-600">Proyectos</a></li>
+        <li><a href="#" class="hover:text-orange-600">Contacto</a></li>
+      </ul>
+  
+      <!-- Botón de Configuración -->
+      <div class="relative">
+        <button id="settingsBtn" class="text-gray-600 hover:text-orange-600 focus:outline-none">
+          ⚙️
+        </button>
+  
+        <!-- Panel de Configuración -->
+        <div id="settingsPanel" class="hidden absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md border border-gray-200 z-50">
+          <ul class="py-2 text-sm text-gray-700">
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Perfil</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Ajustes</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Cerrar sesión</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <script>
+      const btn = document.getElementById('settingsBtn');
+      const panel = document.getElementById('settingsPanel');
+  
+      btn.addEventListener('click', () => {
+        panel.classList.toggle('hidden');
+      });
+  
+      // Ocultar el panel si se hace clic fuera
+      document.addEventListener('click', (e) => {
+        if (!btn.contains(e.target) && !panel.contains(e.target)) {
+          panel.classList.add('hidden');
+        }
+      });
+    </script>
+  
+  </body>
+</html>
