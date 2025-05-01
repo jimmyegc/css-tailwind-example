@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-background text-text font-sans leading-relaxed">
+    <!-- Header -->
+    <header class="bg-secondary text-text p-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Jimmy García</h1>
+        <nav class="space-x-4 text-sm">
+          <a href="#about" class="hover:text-primary transition">Sobre mí</a>
+          <a href="#projects" class="hover:text-primary transition">Proyectos</a>
+          <a href="#contact" class="hover:text-primary transition">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="text-center py-20 px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Desarrollo Web Moderno
+      </h2>
+      <p class="text-muted text-lg mb-6 max-w-xl mx-auto">
+        Soy un desarrollador frontend enfocado en crear experiencias digitales atractivas y funcionales.
+      </p>
+      <a href="#contact" class="bg-primary text-white px-6 py-3 rounded hover:bg-primary/90 transition">
+        Contáctame
+      </a>
+    </section>
+
+    <!-- Sobre mí -->
+    <section id="about" class="bg-surface p-10 md:p-16">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-semibold mb-4">Sobre mí</h3>
+        <p class="text-muted mb-4">
+          Me especializo en tecnologías modernas como Astro, Tailwind CSS y React para construir sitios rápidos y elegantes. Creo que un diseño bien estructurado es clave para destacar en línea.
+        </p>
+        <p class="text-muted">
+          Actualmente estoy enfocado en desarrollar proyectos web personalizados para clientes que buscan presencia profesional.
+        </p>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="projects" class="py-16 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-semibold text-center mb-12">Proyectos Destacados</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-surface p-6 rounded shadow hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-primary mb-2">Sitio Personal</h4>
+            <p class="text-muted">
+              Portafolio hecho con Astro, Tailwind y diseño minimalista, enfocado en performance y estilo profesional.
+            </p>
+          </div>
+          <div class="bg-surface p-6 rounded shadow hover:shadow-lg transition">
+            <h4 class="text-xl font-bold text-primary mb-2">Proyecto Freelance</h4>
+            <p class="text-muted">
+              Desarrollo de una landing para empresa local con foco en SEO y conversión.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="bg-secondary text-white py-12 px-6">
+      <div class="max-w-xl mx-auto text-center">
+        <h3 class="text-2xl font-bold mb-4">¿Trabajamos juntos?</h3>
+        <p class="text-muted mb-6">Estoy disponible para proyectos freelance o colaboraciones. Escríbeme y te responderé pronto.</p>
+        <a href="mailto:tuemail@ejemplo.com" class="bg-primary px-6 py-3 rounded hover:bg-primary/90 transition">
+          Enviarme un correo
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-muted text-center py-6 text-sm">
+      © 2025 Jimmy García — Todos los derechos reservados
+    </footer>
+  </body>
+</html>
