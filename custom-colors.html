@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+   tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          "colors": {
+            "myColor": {
+              "50": "#f9ffe6",
+              "100": "#f2ffcc",
+              "200": "#e6ff99",
+              "300": "#d9ff66",
+              "400": "#cdff33",
+              "500": "#c0ff00",
+              "600": "#9acc00",
+              "700": "#739900",
+              "800": "#4d6600",
+              "900": "#263300"
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- NAVBAR -->
+  <nav class="flex items-center justify-between p-4 bg-gray-200 dark:bg-gray-800 shadow">
+    <h1 class="text-xl font-bold text-myColor-100">Mi Sitio</h1>
+    <button
+      id="toggleDark"
+      class="bg-primary text-white px-4 py-2 rounded hover:opacity-90 transition"
+    >
+      Cambiar tema
+    </button>
+  </nav>
+
+  <!-- CONTAINER -->
+  <main class="max-w-4xl mx-auto p-4 mt-10">
+    
+    <!-- CARD -->
+    <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Título de la tarjeta</h2>
+      <p class="mb-4">
+        Este es un ejemplo de contenido dentro de una tarjeta. El diseño cambia automáticamente al cambiar de modo claro a oscuro.
+      </p>
+      
+      <!-- BOTÓN -->
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+        Acción
+      </button>
+    </div>
+
+  </main>
+
+  <!-- SCRIPT para cambiar el modo -->
+  <script>
+    const toggleDark = document.getElementById('toggleDark');
+    toggleDark.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+  
+</body>
+</html>

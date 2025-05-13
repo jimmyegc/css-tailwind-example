@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-sky-950">
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+
+    <form class="py-8 px-6 bg-white rounded-xl max-w-sm">
+      <div class="text-gray-700 grid">
+        <label for="name" class="mb-2">Escribe tu correo</label>
+        <input 
+          class="border border-gray-300 py-3 px-4 rounded-lg focus:border-indigo-500 outline-none focus:ring-1 focus:ring-indigo-500"
+        type="text" id="email" name="email" autocomplete="email" />
+      </div>
+      <div class="text-gray-700 grid mt-4">
+        <label for="role" class="block text-gray-700 mb-2">¿Qué te describe más?</label>
+        <select 
+          class="border border-gray-300 py-3 px-4 rounded-lg focus:border-indigo-500 outline-none focus:ring-1 focus:ring-indigo-500"
+          name="role" id="role">
+          <option value="">Seleccione</option>
+          <option value="student">Estudiante</option>
+          <option value="developer">Desarrollador</option>
+          <option value="freelancer">Freelancer</option>
+        </select>
+      </div>
+      <div class="text-gray-700 grid mt-4 ">
+        <label for="password" class="mb-2">Escribe tu password</label>
+        <input 
+        class="border border-gray-300 py-3 px-4 rounded-lg focus:border-indigo-500 outline-none focus:ring-1 focus:ring-indigo-500"
+        type="password" id="password" />
+      </div>
+      <div class="text-gray-700 grid mt-4">
+        <input type="checkbox" name="terms" id="terms" >
+        <label for="terms">Acepto los <a href="#"">terminos y condiciones</a></label>
+      </div>
+      <button class="bg-blue-500 py-3 px-2 text-white rounded-lg w-full mt-2 hover:bg-blue-900">Comenzar</button>
+    </form>
+    <div class="relative h-[200vh]">
+      <div class="-z-1 absolute top-0 left-0 rounded-[4rem] rounded-br-[20rem] h-56 w-56 bg-blue-600"></div>
+      <div class="absolute text-white">Bienvenido</div>
+    </div>
+  </body>
+</html>
