@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CV de Jimmy Ernesto García Contreras, Desarrollador Web Full Stack con más de 15 años de experiencia." />
+  <title>CV - Jimmy Ernesto García Contreras</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    @media print {
+  body {
+    margin: 1cm auto;
+    max-width: 700px;
+    color: black !important;
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    font-family: Arial, sans-serif;
+  }
+  a {
+    color: black !important;
+    text-decoration: none !important;
+    cursor: default;
+  }
+  #print-button {
+    display: none;
+  }
+  /* Solo evitar que los títulos se separen */
+  h2 {
+    page-break-before: avoid;
+    page-break-after: avoid;
+  }
+  /* Permitir que los bloques se partan si es necesario */
+  section, article {
+    page-break-inside: auto;
+  }
+}
+
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-sans p-4 max-w-2xl mx-auto print:p-0 print:max-w-full">
+
+  <!-- Botón de imprimir -->
+  <div class="text-right mb-4" id="print-button">
+    <button onclick="window.print()" class="bg-gray-800 text-white px-4 py-2 text-sm rounded hover:bg-gray-700">
+      <i class="fas fa-print mr-2"></i> Imprimir / Guardar PDF
+    </button>
+  </div>
+
+  <!-- Encabezado -->
+<header class="text-center pb-0 mb-6">
+  <h1 class="text-2xl font-bold">Jimmy Ernesto García Contreras</h1>
+  <p class="text-sm">Desarrollador Web Full Stack</p>
+
+  <p class="text-xs leading-tight mt-1 text-gray-700 inline-flex flex-wrap justify-center gap-2 items-center">
+    <a href="mailto:jimmyegc@gmail.com" class="underline text-blue-600 flex items-center gap-1">
+      <!-- Icono correo -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m8 0l-4 4-4-4" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6H4a2 2 0 00-2 2v8a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2z" />
+      </svg>
+      jimmyegc@gmail.com
+    </a> |
+
+    <a href="https://wa.me/5215573706941" class="underline text-blue-600 flex items-center gap-1">
+      <!-- Icono teléfono -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.5 4.5a1 1 0 01-.217 1.09L8.7 10.7a11.037 11.037 0 005.6 5.6l1.436-1.313a1 1 0 011.09-.217l4.5 1.5a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C8.477 21 3 15.523 3 9V5z" />
+      </svg>
+      +52 1 55 7370 6941
+    </a> |
+
+    <a href="https://linkedin.com/in/jimmyegc" class="underline text-blue-600 flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+      <!-- Icono LinkedIn -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.058-1.865-3.058-1.867 0-2.154 1.459-2.154 2.967v5.695h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.837-1.562 3.035 0 3.596 2 3.596 4.59v5.605z"/>
+      </svg>
+      linkedin.com/in/jimmyegc
+    </a> |
+
+    <a href="https://github.com/jimmyegc" class="underline text-blue-600 flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+      <!-- Icono GitHub -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 .297c-6.627 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.724-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.304 3.495.997.108-.775.418-1.305.76-1.605-2.665-.304-5.466-1.332-5.466-5.931 0-1.311.47-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 013.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.234 1.91 1.234 3.221 0 4.61-2.807 5.625-5.48 5.921.43.372.823 1.103.823 2.222v3.293c0 .322.218.694.824.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12z"/>
+      </svg>
+      github.com/jimmyegc
+    </a>
+  </p>
+</header>
+
+
+  <!-- Perfil Profesional -->
+  <section class="mb-6">
+    <h2 class="text-lg font-semibold border-b border-gray-300 pb-1 mb-2">Perfil Profesional</h2>
+    <p class="text-sm leading-relaxed">
+      Full Stack Senior con +15 años creando soluciones escalables para empresas. Especialista en modernizar sistemas heredados, lanzar productos digitales y liderar equipos técnicos. Combinando visión de negocio con dominio técnico, he creado herramientas usadas por miles de usuarios.
+    </p>
+  </section>
+
+  <!-- Experiencia Profesional -->
+  <section class="mb-6">
+    <h2 class="text-lg font-semibold border-b border-gray-300 pb-1 mb-2">Experiencia Profesional</h2>
+
+    <article class="mb-4">
+      <h3 class="font-bold text-md">Desarrollador Front-end · Noverite México S.A. de C.V.</h3>
+      <p class="text-sm text-gray-600">Feb 2024 - Mar 2025 | Naucalpan de Juárez, México</p>
+      <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+        <li>Desarrollé, como parte del equipo, múltiples módulos clave para la plataforma b360.ai, enfocados en mejorar la configuración, usabilidad y operación de call centers.</li>
+        <li>Contribuí directamente al lanzamiento exitoso de las campañas de Ualá y Telcel durante mi primer año de colaboración.</li>        
+      </ul>
+    </article>
+
+    <article class="mb-4">
+      <h3 class="font-bold text-md">Desarrollador Full Stack · Tupperware Brands México</h3>
+      <p class="text-sm text-gray-600">Jun 2012 - Jul 2023 | Cuajimalpa de Morelos, México</p>
+      <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+        <li>Lideré el desarrollo de las primeras aplicaciones móviles corporativas, logrando un incremento del 30% en la eficiencia del acceso a información clave.</li>
+        <li>Diseñé e implementé más de 10 aplicaciones internas y juegos interactivos, mejorando la eficiencia operativa en áreas clave y fortaleciendo el engagement con usuarios finales.</li>
+        <li>Creé y mantuve el chatbot para WhatsApp que atiende a más de 2,500 usuarios activos mensuales, automatizando consultas frecuentes y reduciendo en un 40% la carga del equipo de soporte.</li>        
+        <li>Lideré capacitaciones presenciales y remotas en diferentes regiones del país, asegurando la correcta adopción de las herramientas digitales desarrolladas por el equipo.</li>
+      </ul>
+    </article>
+
+    <article class="mb-4">
+      <h3 class="font-bold text-md">Desarrollador · Global Logos System, S.A. de C.V.</h3>
+      <p class="text-sm text-gray-600">Abr 2011 - May 2012 | Ciudad de México, CDMX</p>
+      <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+        <li>Mantenimiento y desarrollo de módulos clave para FEMSA, especialmente un sistema operativo para líneas de producción en Jugos del Valle (.NET/SQL Server).</li>
+        <li>También lideré investigación y desarrollo de tecnología móvil, creando aplicaciones con Appcelerator y explorando nuevas interfaces con Microsoft Kinect.</li>
+      </ul>
+    </article>
+
+    <article class="mb-4">
+      <h3 class="font-bold text-md">Analista Programador · Amports de México S.A. de C.V.</h3>
+      <p class="text-sm text-gray-600">Nov 2008 - Dic 2010 | Ciudad de México, CDMX</p>
+      <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+        <li>Responsable de brindar soporte y mantenimiento a los sistemas web y móviles en las 6 sedes de la empresa.</li>
+        <li>Encargado de asegurar la operación continua de los procesos de facturación y del mantenimiento de la infraestructura tecnológica.</li>
+      </ul>
+    </article>
+
+    <article class="mb-4">
+      <h3 class="font-bold text-md">Desarrollador · Freelancer</h3>
+      <p class="text-sm text-gray-600">Ago 2004 - Oct 2008 | Tamaulipas, México</p>
+      <ul class="list-disc pl-5 mt-1 text-sm space-y-1">
+        <li>Desarrollé sistemas a medida para distintos sectores (salud, financiero, logística), incluyendo soluciones de inventario, POS, facturación y gestión administrativa.</li>
+        <li>Encargado del diseño e implementación de un sistema integral para PEMEX. También brindé soporte técnico, ventas y mantenimiento de equipos de cómputo.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- Educación -->
+  <section class="mb-6">
+    <h2 class="text-lg font-semibold border-b border-gray-300 pb-1 mb-2">Educación</h2>
+    <div>
+      <p class="text-sm"><strong>Ing. en Sistemas Computacionales</strong>, Instituto Tecnológico de Ciudad Madero (1997–2004) | Céd. Prof.: 14840712</p>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section class="mb-6">
+    <h2 class="text-lg font-semibold border-b border-gray-300 pb-1 mb-2">Habilidades Técnicas</h2>
+    <ul class="grid grid-cols-2 gap-2 text-xs list-disc pl-5">
+      <li><span class="font-semibold">Frontend:</span> HTML, CSS, SASS, JavaScript, TypeScript, React, Vue, Tailwind, Astro</li>
+      <li><span class="font-semibold">Backend:</span> Node.js, PHP, C#, .NET, Express, Supabase</li>
+      <li><span class="font-semibold">Base de Datos:</span> MySQL, PostgreSQL, SQL Server, MongoDB</li>
+      <li><span class="font-semibold">Cloud & DevOps:</span> Git, GitHub, BitBucket, Jira, Docker, Firebase, Netlify, AWS, Azure</li>
+    </ul>
+  </section>
+
+  <!-- Idiomas -->
+  <section class="mb-6">
+    <h2 class="text-lg font-semibold border-b border-gray-300 pb-1 mb-2">Idiomas</h2>
+    <p class="text-sm">Español (Nativo), Inglés (Intermedio – B1, lectura técnica y documentación fluida)</p>
+  </section>
+
+</body>
+</html>
