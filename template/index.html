@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <!-- Aquí puedes cambiar entre login, register y forgot-password -->
+    <div id="auth-container" class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+      <!-- INICIO DE SESIÓN -->
+      <form id="login-form" class="space-y-6">
+        <h2 class="text-2xl font-bold text-center">Iniciar sesión</h2>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Correo</label>
+          <input type="email" class="mt-1 w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-500" required />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <input type="password" class="mt-1 w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-500" required />
+        </div>
+
+        <div class="flex justify-between items-center text-sm">
+          <a href="#" onclick="showForm('forgot')" class="text-blue-600 hover:underline">¿Olvidaste tu contraseña?</a>
+          <a href="#" onclick="showForm('register')" class="text-gray-600 hover:underline">Registrarse</a>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-lg">Entrar</button>
+      </form>
+
+      <!-- REGISTRO -->
+      <form id="register-form" class="space-y-6 hidden">
+        <h2 class="text-2xl font-bold text-center">Crear cuenta</h2>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Nombre completo</label>
+          <input type="text" class="mt-1 w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-500" required />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Correo</label>
+          <input type="email" class="mt-1 w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-500" required />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+          <input type="password" class="mt-1 w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-500" required />
+        </div>
+
+        <div class="text-sm">
+          <a href="#" onclick="showForm('login')" class="text-gray-600 hover:underline">¿Ya tienes una cuenta?</a>
+        </div>
+
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg">Registrarse</button>
+      </form>
+
+      <!-- RECUPERAR CONTRASEÑA -->
+      <form id="forgot-form" class="space-y-6 hidden">
+        <h2 class="text-2xl font-bold text-center">Recuperar contraseña</h2>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Correo electrónico</label>
+          <input type="email" class="mt-1 w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-500" required />
+        </div>
+
+        <div class="text-sm">
+          <a href="#" onclick="showForm('login')" class="text-gray-600 hover:underline">Volver al inicio de sesión</a>
+        </div>
+
+        <button type="submit" class="w-full bg-yellow-600 hover:bg-yellow-700 text-white p-2 rounded-lg">Enviar enlace</button>
+      </form>
+    </div>
+
+    <script>
+      function showForm(form) {
+        document.getElementById("login-form").classList.add("hidden");
+        document.getElementById("register-form").classList.add("hidden");
+        document.getElementById("forgot-form").classList.add("hidden");
+
+        if (form === "login") document.getElementById("login-form").classList.remove("hidden");
+        if (form === "register") document.getElementById("register-form").classList.remove("hidden");
+        if (form === "forgot") document.getElementById("forgot-form").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
