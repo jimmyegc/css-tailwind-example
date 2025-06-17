@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Card del Evento -->
+  <div class="max-w-sm mx-auto my-10">
+    <div onclick="openModal()" class="cursor-pointer bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <img class="w-full h-48 object-cover" src="https://www.dondeir.com/wp-content/uploads/2021/06/edc-enjambre-y-mas-conciertos-confirmados-para-2021-en-cdmx.jpg" alt="Cover del evento">
+      <div class="p-4">
+        <h2 class="text-xl font-bold">Festival de Música 2025</h2>
+        <p class="text-sm text-gray-600 mt-1">📍 Ciudad de México</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="eventModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white rounded-lg overflow-y-auto shadow-xl max-w-lg w-full max-h-[90vh]">
+      <img class="w-full h-64 object-cover rounded-t-lg" src="https://www.dondeir.com/wp-content/uploads/2021/06/edc-enjambre-y-mas-conciertos-confirmados-para-2021-en-cdmx.jpg" alt="Cover del evento">
+      <div class="p-6">
+        <h3 class="text-2xl font-bold mb-2">Festival de Música 2025</h3>
+        <p class="text-gray-700 mb-4">
+          🎤 Un evento único con artistas internacionales. Disfruta de la mejor música en vivo, experiencias gastronómicas y mucho más.
+        </p>
+        <p><strong>📍 Ubicación:</strong> Ciudad de México</p>
+        <p class="mt-2"><strong>ℹ️ Acerca del evento:</strong> Vive una experiencia multisensorial en el corazón de la ciudad.</p>
+        <p class="mt-2"><strong>📧 Contacto:</strong> contacto@festivalmusica.com</p>
+        <p class="mt-1"><strong>📞 Teléfono:</strong> +52 55 1234 5678</p>
+
+        <button onclick="closeModal()" class="mt-6 w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function openModal() {
+      document.getElementById('eventModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('eventModal').classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>
