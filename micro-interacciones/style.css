@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f3ff;  
+  font-family: 'Inter', sans-serif;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 1rem;
+  gap: 2rem;
+}
+
+button {
+  background-color: #5e60c3;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+button:hover {
+  background-color: #4ea8de;
+  transform: scale(1.05);
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  box-shadow: 0 4px #5e60c3;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-container:focus-within {
+  box-shadow: 0 4px #4ea8de;
+}
+
+.input-container input {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+.fa-envelope {
+  color: #dedede;
+}
+
+.card {
+  background: #fff;
+  font-weight: 600;
+  padding: 4rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
