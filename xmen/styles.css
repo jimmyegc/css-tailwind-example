@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #1a1a1a;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  background: #ffd700;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.hero h1 span {
+  color: #222;
+}
+
+.hero p {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  width: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+  border: 4px solid #2c2c2c;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.info h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.artist {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.25rem;
+}
