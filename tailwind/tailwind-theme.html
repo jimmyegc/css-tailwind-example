@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD de Usuarios</title>
+
+    <!-- Tailwind CDN v3/v4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom theme (usando CSS variables) -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: '#121212',
+              surface: '#1e1e1e',
+              accent: '#8b5cf6', // purple
+              accentDark: '#6d28d9',
+              text: '#e5e5e5',
+              muted: '#a3a3a3',
+              danger: '#ef4444',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+
+  <body class="bg-background text-text font-sans min-h-screen p-6">
+    <div class="max-w-2xl mx-auto bg-surface p-6 rounded-xl shadow">
+      <h1 class="text-2xl font-semibold mb-4">Agregar Usuario</h1>
+
+      <form class="space-y-4">
+        <div>
+          <label class="block text-sm mb-1">Nombre</label>
+          <input
+            type="text"
+            placeholder="Juan Pérez"
+            class="w-full bg-background border border-muted text-text px-4 py-2 rounded"
+          />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Correo</label>
+          <input
+            type="email"
+            placeholder="correo@ejemplo.com"
+            class="w-full bg-background border border-muted text-text px-4 py-2 rounded"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-accent hover:bg-accentDark transition text-white font-semibold px-4 py-2 rounded"
+        >
+          Guardar Usuario
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
