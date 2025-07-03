@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basketball Game</title>
+  <style>
+    /* Estilo general */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #game {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      background-color: #f4f4f4;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    .branding {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      font-weight: bold;
+      z-index: 10;
+    }
+
+    #scoreboard {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      font-size: 16px;
+      z-index: 10;
+      text-align: right;
+    }
+
+    #hoop {
+      position: absolute;
+      top: 100px;
+      left: 130px;
+      width: 100px;
+      height: 10px;
+      background: red;
+      border-radius: 5px;
+    }
+
+    #ball {
+      position: absolute;
+      bottom: 60px;
+      left: 160px;
+      width: 40px;
+      height: 40px;
+      background: orange;
+      border-radius: 50%;
+      box-shadow: inset -4px -4px #b34700;
+      cursor: pointer;
+    }
+
+    #message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <div class="branding">NMDA GAMES</div>
+    <div id="scoreboard">
+      Tiempo: <span id="time">30</span>s<br>
+      Puntos: <span id="score">0</span>
+    </div>
+    <div id="hoop"></div>
+    <div id="ball"></div>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const ball = document.getElementById('ball');
+    const hoop = document.getElementById('hoop');
+    const timeEl = document.getElementById('time');
+    const scoreEl = document.getElementById('score');
+    const messageEl = document.getElementById('message');
+
+    let score = 0;
+    let timeLeft = 30;
+    let fails = 0;
+    let isShooting = false;
+
+    // Mueve el aro a una posición aleatoria horizontal
+    function moveHoop() {
+      const x = Math.random() * (300 - 60) + 30;
+      hoop.style.left = `${x}px`;
+    }
+
+    // Temporizador
+    const timer = setInterval(() => {
+      timeLeft--;
+      timeEl.textContent = timeLeft;
+      if (timeLeft <= 0) endGame("¡Tiempo terminado!");
+    }, 1000);
+
+    // Evento al hacer clic en la pelota
+    ball.addEventListener('click', () => {
+      if (isShooting) return;
+      isShooting = true;
+
+      const ballRect = ball.getBoundingClientRect();
+      const hoopRect = hoop.getBoundingClientRect();
+      const gameRect = document.getElementById('game').getBoundingClientRect();
+
+      // Animar el disparo
+      const ballStartY = ball.offsetTop;
+      const ballStartX = ball.offsetLeft;
+      const ballCenterX = ballStartX + 20;
+
+      const hoopCenterX = hoop.offsetLeft + 50;
+
+      // Simular tiro en parábola básica
+      const deltaX = hoopCenterX - ballCenterX;
+      const peakY = 200;
+
+      let frame = 0;
+      const totalFrames = 30;
+
+      const shoot = setInterval(() => {
+        frame++;
+        const progress = frame / totalFrames;
+        const y = ballStartY - (4 * peakY * progress * (1 - progress));
+        const x = ballStartX + deltaX * progress;
+
+        ball.style.top = `${y}px`;
+        ball.style.left = `${x}px`;
+
+        if (frame >= totalFrames) {
+          clearInterval(shoot);
+          checkShot();
+          resetBall();
+          isShooting = false;
+        }
+      }, 16);
+    });
+
+    // Verifica si fue encestado
+    function checkShot() {
+      const ballPos = ball.getBoundingClientRect();
+      const hoopPos = hoop.getBoundingClientRect();
+
+      const ballCenterX = ballPos.left + ballPos.width / 2;
+      const ballCenterY = ballPos.top + ballPos.height / 2;
+
+      if (
+        ballCenterX > hoopPos.left &&
+        ballCenterX < hoopPos.right &&
+        ballCenterY > hoopPos.top &&
+        ballCenterY < hoopPos.bottom + 20
+      ) {
+        score += 3;
+        scoreEl.textContent = score;
+        moveHoop();
+      } else {
+        fails++;
+        if (fails >= 2) endGame("¡Has fallado dos veces!");
+      }
+    }
+
+    // Resetear pelota a posición inicial
+    function resetBall() {
+      ball.style.top = 'auto';
+      ball.style.left = '160px';
+      ball.style.bottom = '60px';
+    }
+
+    // Finalizar juego
+    function endGame(msg) {
+      clearInterval(timer);
+      messageEl.textContent = msg + `\nPuntaje final: ${score}`;
+      messageEl.style.display = 'block';
+      ball.style.pointerEvents = 'none';
+    }
+  </script>
+</body>
+</html>
