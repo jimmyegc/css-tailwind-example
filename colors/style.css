@@ -1,0 +1,73 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --base-color: hsl(241, 47%, 26%);
+      --base-color: hsl(223, 18%, 20%);
+      --base-color: hsl(212, 61%, 19%);
+      --primary-color: hsl(from var(--base-color) h s calc(l + 10));
+      --secondary-color: hsl(from var(--base-color) h s calc(l + 20));
+      --base-darker: hsl(from var(--base-color) h s calc(l - 5));
+      --base-black: hsl(from var(--base-color) h s calc(l - 10));
+    }
+
+    html {
+      background-image: url('./photo-1540959733332-eab4deabeeaf.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    body {      
+      /* background: hsl(250 100% 40% / 0.5); */
+      /* background: hsl(from var(--brand-color) h s l / 0.5); */
+      background: hsl(from var(--base-color) h s l / 0.5);
+      padding: 4em;
+      min-height: 100dvh;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      background: hsl(from var(--base-color) h s calc(l + 10));
+      margin: 3em auto;
+      width: 20em;
+      padding: 2em;
+      border-radius: .5em;
+    }
+
+.boxes {
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 200px;
+}
+
+.boxes div {  
+  padding: 2.5em;  
+  border-radius: 10px;
+}
+
+.a {
+  background: var(--base-black);
+}
+
+.b {
+  background: var(--base-darker);
+}
+
+.c {
+  background: var(--base-color);
+}
+
+.d {
+  background: var(--primary-color);
+}
+
+.e {
+  background: var(--secondary-color);
+}
