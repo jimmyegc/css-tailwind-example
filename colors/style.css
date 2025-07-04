@@ -8,10 +8,14 @@
       --base-color: hsl(241, 47%, 26%);
       --base-color: hsl(223, 18%, 20%);
       --base-color: hsl(212, 61%, 19%);
+      --base-color: hsl(240, 30%, 20%); /* oscuro azul violáceo */
       --primary-color: hsl(from var(--base-color) h s calc(l + 10));
       --secondary-color: hsl(from var(--base-color) h s calc(l + 20));
       --base-darker: hsl(from var(--base-color) h s calc(l - 5));
       --base-black: hsl(from var(--base-color) h s calc(l - 10));
+      --accent-color: hsl(from var(--base-color) h calc(s + 20%) calc(l + 40%));
+      --border-color: hsl(from var(--base-color) h s calc(l + 5%));
+      --hover-color: hsl(from var(--base-color) h s calc(l + 10%));
     }
 
     html {
@@ -70,4 +74,30 @@
 
 .e {
   background: var(--secondary-color);
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75em 1.5em;
+  border: none;
+  border-radius: 0.5em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+}
+
+.card {
+  background-color: var(--base-color);
+  color: white;
+  border-left: 5px solid var(--accent-color);
+  padding: 1.5em;
+  margin: 1em auto;
+  border-radius: 0.5em;
+  max-width: 400px;
+  text-align: left;
 }
