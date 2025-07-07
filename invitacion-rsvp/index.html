@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación RSVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans text-gray-800">
+    <div class="max-w-xl mx-auto p-4 mt-8 bg-white rounded-2xl shadow-lg">
+      <img
+        src="https://via.placeholder.com/800x400"
+        alt="Imagen del evento"
+        class="rounded-xl mb-6"
+      />
+      <h1 class="text-2xl font-bold mb-2">¡Hola Juan Pérez!</h1>
+      <p class="mb-4">
+        Estás cordialmente invitado al evento de <strong>Karla & Jorge</strong>.
+      </p>
+      <ul class="mb-4">
+        <li>📅 <strong>20 de agosto de 2025</strong></li>
+        <li>📍 <strong>Jardín El Encino, CDMX</strong></li>
+      </ul>
+
+      <form id="rsvp-form" class="space-y-4">
+        <div>
+          <label class="block text-sm mb-1">¿Asistirás?</label>
+          <div class="flex gap-4">
+            <label class="flex items-center">
+              <input type="radio" name="attendance" value="yes" class="mr-2" />
+              Sí asistiré
+            </label>
+            <label class="flex items-center">
+              <input type="radio" name="attendance" value="no" class="mr-2" />
+              No podré asistir
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm mb-1">Comentarios (opcional)</label>
+          <textarea
+            name="comments"
+            rows="3"
+            class="w-full border rounded-lg p-2"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
+        >
+          Confirmar asistencia
+        </button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById('rsvp-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Gracias por confirmar tu asistencia 🎉');
+        // Aquí podrías enviar los datos con fetch o a Supabase
+      });
+    </script>
+  </body>
+</html>
